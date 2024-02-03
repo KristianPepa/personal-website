@@ -1,23 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import { Layout, Menu, Switch } from "antd";
+import { HomeOutlined } from "@ant-design/icons";
+import "./App.css";
+import Title from "antd/es/skeleton/Title";
+
+const { Header } = Layout;
+
+const menuList = [
+  {
+    key: "home",
+    label: "Home",
+    icon: <HomeOutlined />,
+  },
+  {
+    key: "project",
+    label: "Projects",
+    icon: "",
+  },
+  {
+    key: "achievements",
+    label: "Achievements",
+    icon: "",
+  },
+  {
+    key: "contact",
+    label: "Contact",
+    icon: "",
+  },
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <Header>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          <Title>Kristian Pepa</Title>
+          <Menu
+            theme="dark"
+            mode="horizontal"
+            items={menuList}
+            style={{ flex: 1, minWidth: 0 }}
+          />
+          <Switch defaultChecked />
+        </div>
+      </Header>
     </div>
   );
 }
