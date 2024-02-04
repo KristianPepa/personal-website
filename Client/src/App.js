@@ -1,9 +1,16 @@
-import { Layout, Menu, Switch } from "antd";
-import { HomeOutlined } from "@ant-design/icons";
+import { Layout, Menu, Switch, Typography } from "antd";
+import {
+  AreaChartOutlined,
+  BuildOutlined,
+  HomeOutlined,
+  MailOutlined,
+  TrophyOutlined,
+} from "@ant-design/icons";
 import "./App.css";
-import Title from "antd/es/skeleton/Title";
+import { useState } from "react";
 
 const { Header } = Layout;
+const { Title } = Typography;
 
 const menuList = [
   {
@@ -12,42 +19,40 @@ const menuList = [
     icon: <HomeOutlined />,
   },
   {
+    key: "experience",
+    label: "Experience",
+    icon: <AreaChartOutlined />,
+  },
+  {
     key: "project",
     label: "Projects",
-    icon: "",
+    icon: <BuildOutlined />,
   },
   {
     key: "achievements",
     label: "Achievements",
-    icon: "",
+    icon: <TrophyOutlined />,
   },
   {
     key: "contact",
     label: "Contact",
-    icon: "",
+    icon: <MailOutlined />,
   },
 ];
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
   return (
     <div className="App">
-      <Header>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          <Title>Kristian Pepa</Title>
-          <Menu
-            theme="dark"
-            mode="horizontal"
-            items={menuList}
-            style={{ flex: 1, minWidth: 0 }}
-          />
-          <Switch defaultChecked />
-        </div>
+      <Header className="header">
+        <Title color="white">Kristian Pepa</Title>
+        <Menu
+          theme={`${darkMode ? "light" : "dark"}`}
+          mode="horizontal"
+          items={menuList}
+          style={{ flex: 1, minWidth: 0 }}
+        />
+        <Switch onChange={() => setDarkMode(!darkMode)} />
       </Header>
     </div>
   );
