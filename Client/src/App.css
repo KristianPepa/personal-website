@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -5,16 +7,21 @@
 }
 
 .ant-menu {
-  /* margin-left: 1/2;
-  margin-right: 1/2; */
   max-width: fit-content;
 }
 
-.ant-switch {
-  max-width: 225px;
+.switch-container {
+  width: 160px;
+  text-align: end;
 }
 
 .ant-typography {
+  font-family: "Bebas Neue", sans-serif;
   max-width: 225px;
-  background-color: yellow;
+  font-size: 2em;
+  color: rgba(255, 255, 255, 0.65) !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+  font-weight: bold;
+  margin: 0 !important;
 }

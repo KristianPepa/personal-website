@@ -44,15 +44,20 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
   return (
     <div className="App">
-      <Header className="header">
-        <Title color="white">Kristian Pepa</Title>
+      <Header
+        className="header"
+        style={{ backgroundColor: darkMode ? "white" : "#001529" }}
+      >
+        <Title level={2}>Kristian Pepa</Title>
         <Menu
           theme={`${darkMode ? "light" : "dark"}`}
           mode="horizontal"
           items={menuList}
           style={{ flex: 1, minWidth: 0 }}
         />
-        <Switch onChange={() => setDarkMode(!darkMode)} />
+        <div className="switch-container">
+          <Switch onChange={() => setDarkMode(!darkMode)} />
+        </div>
       </Header>
     </div>
   );
