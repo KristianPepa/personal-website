@@ -8,6 +8,13 @@ import {
 } from "@ant-design/icons";
 import "./App.css";
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+
+import Home_Page from "./Pages/Home/Home";
+import Experience_Page from "./Pages/Experience/Experience";
+import Projects_Page from "./Pages/Projects/Projects";
+import Achievements_Page from "./Pages/Achievements/Achievements";
+import Contact_Page from "./Pages/Contact/Contact";
 
 const { Header } = Layout;
 const { Title } = Typography;
@@ -59,6 +66,13 @@ function App() {
           <Switch onChange={() => setDarkMode(!darkMode)} />
         </div>
       </Header>
+      <Routes>
+        <Route path="/" element={<Home_Page />} />
+        <Route path="/experience" element={<Experience_Page />} />
+        <Route path="/projects" element={<Projects_Page />} />
+        <Route path="/achievements" element={<Achievements_Page />} />
+        <Route path="/contact" element={<Contact_Page />} />
+      </Routes>
     </div>
   );
 }
