@@ -25,3 +25,12 @@
   font-weight: bold;
   margin: 0 !important;
 }
+
+.markedText {
+  color: #fff !important;
+}
+.home {
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+}

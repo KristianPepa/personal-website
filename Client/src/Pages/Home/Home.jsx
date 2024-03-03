@@ -4,8 +4,7 @@ import "./Home.scss";
 const Home = () => {
   return (
     <div className="container">
-      <div className="contents"></div>
-      {/* <img src={HomeImage} alt="Background" /> */}
+      <div></div>
     </div>
   );
 };
